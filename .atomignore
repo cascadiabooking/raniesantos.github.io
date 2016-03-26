@@ -3,3 +3,5 @@ assets/js/
 .gitattributes
 .gitignore
 favicon.ico
+favicon.png
+apple-touch-icon.png
