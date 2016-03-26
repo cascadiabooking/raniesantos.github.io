@@ -2,7 +2,7 @@
 
 #### simple
 - **contact page:** use ajax to submit, use js form validator
-- add any easy-to-implement **social sharing buttons**
+- style the **social sharing links**
 - improve og image
 
 #### other
