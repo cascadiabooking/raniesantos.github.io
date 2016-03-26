@@ -1,0 +1,25 @@
+title: Ranie Santos
+description: I'm Ranie Santos, a graduate of Bachelor of Science in Information Technology. My focus is on web development and I enjoy learning new concepts in this field.
+owner:
+  name: Ranie Santos
+  email: ransan32@yahoo.com
+  twitter: https://twitter.com/intent/user?user_id=906043244
+  google-plus: https://plus.google.com/u/0/113604471991063878909
+  github: https://github.com/ranietots32
+  resume-pdf: https://drive.google.com/file/d/0BxTkFtINjLyIYUFRQUxScUt0cXc/view?usp=sharing
+
+## more settings
+timezone: Asia/Manila
+future: true
+markdown: kramdown
+safe: true
+lsi: false
+
+permalink: /:title.html
+
+exclude:
+- node_modules
+- bower_components
+- README.md
+- package.json
+- gulpfile.js

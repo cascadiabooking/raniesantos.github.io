@@ -1,0 +1,17 @@
+.header{
+	background: $header-bg-color;
+	color: #fff;
+	font-family: "Montserrat";
+	@include clearfix;
+
+	a{
+		padding: 18px;
+		display: block;
+	}
+
+	&--brand{
+		float: left;
+		text-transform: uppercase;
+		background: $theme-color-1;
+	}
+} // .header

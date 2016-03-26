@@ -1,0 +1,36 @@
+.bar-chart{
+	font-weight: bold;
+	font-size: 0.8em;
+	margin-bottom: 30px;
+
+	&--bar{
+		background: #ddd;
+		margin-bottom: 15px;
+
+		&--fill{
+			@include size(0, 15px);
+			transition: all 1s;
+
+			&.html-css{
+				background: $green;
+			}
+
+			&.js{
+				background: $yellow;
+			}
+
+			&.php{
+				background: $purple;
+			}
+
+			&.java{
+				background: $orange;
+			}
+
+			&.vb{
+				background: $blue;
+			}
+		} // .bar-chart--bar--fill
+	} // .bar-chart--bar
+
+} // .bar-chart

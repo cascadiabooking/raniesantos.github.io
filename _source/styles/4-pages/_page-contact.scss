@@ -1,0 +1,32 @@
+.page-contact{
+	@include container(640px);
+	padding: 0 20px;
+
+	&--title,
+	&--submit{
+		text-align: center;
+	}
+
+	label{
+		font-weight: bold;
+	}
+
+	input[type="text"],
+	input[type="email"],
+	textarea{
+		border-color: #ccc;
+		display: block;
+		width: 100%;
+		padding: 10px;
+		margin: 5px 0 15px;
+		transition: all 400ms;
+
+		&:focus{
+			border-color: $theme-color-1;
+		}
+	}
+
+	textarea{
+		height: 120px;
+	}
+}

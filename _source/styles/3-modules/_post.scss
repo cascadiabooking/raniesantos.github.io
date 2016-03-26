@@ -1,0 +1,29 @@
+.post{
+	margin: 0 auto;
+	padding: 0 20px;
+	max-width: 960px;
+
+	&--head{
+		&--metas{
+			@include clearfix;
+			color: $theme-color-1;
+			font-weight: bold;
+		}
+
+		&--meta{
+			float: left;
+			margin-bottom: 15px;
+			margin: 0 15px 15px 0;
+
+			&--icon{
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			img{
+				@include size(42px);
+				border-radius: 50%;
+			}
+		}
+	} // .post--head
+} // .post

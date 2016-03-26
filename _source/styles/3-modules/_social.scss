@@ -1,0 +1,37 @@
+.social{
+	text-align: center;
+	font-size: 1.1em;
+
+	a{
+		display: inline-block;
+		border-radius: 50%;
+		color: transparent;
+		box-shadow: $light-shadow;
+		transition: all 400ms;
+
+		&:hover{
+			box-shadow: $dark-shadow;
+		}
+	}
+
+	&--facebook{
+		background: $facebook;
+	}
+
+	&--twitter{
+		background: $twitter;
+	}
+
+	&--google-plus{
+		background: $google-plus;
+	}
+
+	&--github{
+		background: #000;
+	}
+
+	&--linkedin{
+		background: $linkedin;
+	}
+
+} // .social

@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<div class="page-posts">
+
+	<div class="page-posts--title copy">
+		<h1>Posts</h1>
+	</div>
+
+	<ul class="page-posts--list">
+		{% for post in site.posts %}
+		<li class="page-posts--list--item">
+
+			<article class="post-card">
+				<section class="post-card--section">
+					<h4 class="post-card--title">{{ post.title }}</h4>
+					{{ post.excerpt | strip_html | truncatewords:40 }}
+				</section>
+				<footer class="post-card--footer">
+					<div class="post-card--footer--block">
+						<time class="post-card--date" datetime="{{ post.date | date: "%Y-%m-%d" }}" pubdate>{{ post.date | date: "%b %-d, %Y" }}</time>
+					</div>
+					<div class="post-card--footer--block">
+						<a class="cta" href="{{ post.url }}">
+							<i class="fa fa-angle-double-right"></i> Read More
+						</a>
+					</div>
+				</footer>
+			</article>
+
+		</li>
+		{% endfor %}
+	</ul>
+
+</div><!-- .page-posts -->

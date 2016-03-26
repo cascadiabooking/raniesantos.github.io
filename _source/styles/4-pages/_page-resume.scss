@@ -1,0 +1,41 @@
+.page-resume{
+	@include container(960px);
+	padding: 0 20px;
+
+	h1, h2{
+		margin-bottom: 15px;
+		line-height: 1.2;
+	}
+
+	&--title,
+	&--pdf{
+		@include span(full);
+		text-align: center;
+	}
+
+	&--pdf{
+		.cta{
+			background: $red;
+		}
+	}
+
+	&--skills,
+	&--work{
+		@include span(6 of 12);
+	}
+
+	&--languages,
+	&--education{
+		@include span(6 of 12 last);
+	}
+
+	&--skills,
+	&--languages,
+	&--work,
+	&--education{
+		@include media(670px) {
+			@include span(full);
+		}
+	}
+
+} // .page-resume

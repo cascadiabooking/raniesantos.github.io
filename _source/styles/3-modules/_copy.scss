@@ -1,0 +1,57 @@
+.copy{
+	line-height: 1.6;
+
+	h1, h2, h3, h4{
+		margin-bottom: 15px;
+		line-height: 1.2;
+	}
+
+	p, dl, pre{
+		margin-bottom: 30px;
+	}
+
+	strong, th, code:not([class*="language-"]){
+		color: $text-color-accent;
+	}
+
+	ul{
+		list-style-type: disc;
+	}
+
+	ul, ol{
+		padding-left: 30px;
+		margin-bottom: 30px;
+
+		ul, ol{
+			margin-bottom: 0;
+		}
+	}
+
+	// li{}
+
+	dt{
+		font-weight: bold;
+	}
+
+	dd{
+		margin-left: 30px;
+	}
+
+	// blockquote{}
+
+	// figure{}
+	// figcaption{}
+
+	img{
+		max-width: 100%;
+		margin: 0 auto;
+	}
+
+	a{
+		color: $link-color;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+}

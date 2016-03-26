@@ -1,0 +1,27 @@
+body{
+	background: $bg-color;
+	color: $text-color;
+	font-family: "Open Sans";
+}
+
+h1, h2, h3, h4{
+	@extend %montserrat-uppercase;
+	font-weight: bold;
+	color: $text-color-accent;
+}
+
+h1{
+	font-size: 2.1em;
+}
+
+h2{
+	font-size: 1.8em;
+}
+
+h3{
+	font-size: 1.5em;
+}
+
+h4{
+	font-size: 1.3em;
+}

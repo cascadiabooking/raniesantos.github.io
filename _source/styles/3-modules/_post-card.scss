@@ -1,0 +1,43 @@
+.post-card{
+	box-shadow: $light-shadow;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+
+
+	&--section{
+		padding: 10px 20px 0;
+		height: 100%;
+	}
+
+	&--title{
+		margin-bottom: 0.3em
+	}
+
+	&--date{
+		@extend %montserrat-uppercase;
+		display: block;
+		padding: 13px 0;
+		color: $theme-color-1;
+		text-align: center;
+		font-weight: bold;
+	}
+
+	&--footer{
+		background: #ddd;
+		box-shadow: 0 -10px 15px 10px $bg-color;
+		@include position(absolute, null 0 0 0);
+		@include clearfix;
+
+		&--block{
+			float: left;
+			width: 50%;
+			padding: 8px;
+		}
+
+	}
+
+	.cta{
+		margin: 0 auto;
+	}
+}

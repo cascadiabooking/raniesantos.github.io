@@ -1,0 +1,26 @@
+@mixin clearfix {
+  &::after {
+		clear: both;
+    content: "";
+    display: block;
+  }
+}
+
+@mixin size($width, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+@mixin position($position: relative, $coordinates: null) {
+	position: $position;
+	top:		nth($coordinates, 1);
+	right:	nth($coordinates, 2);
+	bottom:	nth($coordinates, 3);
+	left:		nth($coordinates, 4);
+}
+
+@mixin media($width) {
+	@media (max-width: $width){
+		@content;
+	}
+}

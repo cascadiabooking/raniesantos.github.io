@@ -1,0 +1,15 @@
+.timeline{
+	margin-bottom: 30px;
+
+	&--item{
+		border-bottom: 1px solid #bbb;
+		padding: 0 10px 15px;
+		margin-bottom: 15px;
+
+		span{
+			@extend %montserrat-uppercase;
+			font-weight: bold;
+			color: $theme-color-1;
+		}
+	}
+} // .timeline

@@ -1,0 +1,17 @@
+.cta{
+	cursor: pointer;
+	display: inline-block;
+	width: 100%;
+	max-width: 280px;
+	padding: 12px 0;
+	background: $cta-bg-color;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	box-shadow: $light-shadow;
+	transition: all 400ms;
+
+	&:hover{
+		box-shadow: $dark-shadow;
+	}
+}

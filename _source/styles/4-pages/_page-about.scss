@@ -1,0 +1,43 @@
+.page-about{
+	@include container(960px);
+	padding: 0 20px;
+
+	.copy{
+		@include container();
+	}
+
+	&--title{
+		@include span(full);
+		text-align: center;
+	}
+
+	&--photo{
+		@include span(4 of 12);
+
+		img{
+			@include size(200px);
+			border-radius: 50%;
+			box-shadow: $light-shadow;
+		}
+	}
+
+	&--info{
+		@include span(8 of 12 last);
+	}
+
+	// &--contact{
+	// 	text-align: center;
+	//
+	// 	.cta{
+	// 		background: $yahoo;
+	// 		margin-bottom: 30px;
+	// 	}
+	// }
+
+	@include media(670px) {
+		&--photo,
+		&--info{
+			@include span(full);
+		}
+	}
+} // .page-about

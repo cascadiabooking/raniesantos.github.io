@@ -1,0 +1,36 @@
+.page-posts{
+	max-width: 1280px;
+	margin: 0 auto;
+
+	&--title{
+		padding: 0 20px;
+		text-align: center;
+	}
+	&--list{
+		@include clearfix;
+
+		&--item{
+			float: left;
+			@include size(320px, 250px);
+			padding: 0 10px;
+			margin-bottom: 20px;
+		}
+	}
+
+	@include media(1290px) {
+		max-width: 960px;
+	}
+
+	@include media(970px) {
+		max-width: 640px;
+	}
+
+	@include media(650px) {
+		max-width: 440px;
+
+		&--list--item{
+			@include size(100%, 210px);
+		}
+	}
+
+} // .page-about
