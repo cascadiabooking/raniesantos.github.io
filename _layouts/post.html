@@ -28,4 +28,8 @@ layout: default
 	<div class="post--body">
 		{{ content }}
 	</div>
+	{% if site.disqus_shortname and page.comments == true %}
+		<h4>Comments</h4>
+		{% include disqus_comments.html %}
+	{% endif %}
 </article>
