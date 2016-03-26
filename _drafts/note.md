@@ -1,7 +1,7 @@
 ## pending features
 
 #### simple
-- **contact page:** use ajax to submit, use js form validator
+- **contact page:** use js form validator
 - **post template:** comments & share links w:750px, exclude from copy
 - style the **social sharing links**
 - improve og image

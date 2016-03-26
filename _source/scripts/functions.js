@@ -34,10 +34,8 @@ function animateBarChart(){
 	});
 }
 
-function setContactFormAction(){
+function getFormspreeSubmitUrl(){
 	var base64_email = "cmFuc2FuMzJAeWFob28uY29t",
-			base_url = "//formspree.io/",
-			action = base_url + atob(base64_email);
-
-	$("#contact-form").attr("action", action);
+			base_url = "//formspree.io/";
+	return base_url + atob(base64_email);
 }

@@ -4,7 +4,31 @@ function pageReady(){
 
 	Prism.highlightAll();
 
-	setContactFormAction();
+	$("#contact-form").submit(function(e){
+		e.preventDefault();
+
+		var submitToFormspree = function(form){
+			var submitUrl = getFormspreeSubmitUrl();
+
+			$.ajax({
+				url: submitUrl,
+				method: "POST",
+				data: $(form).serialize(),
+				dataType: "json",
+				beforeSend: function(){
+					console.log("Sending message...");
+				},
+				success: function(data){
+					console.log("Message sent.");
+				},
+				error: function(err){
+					console.log("Something went wrong.");
+				}
+			});
+		};
+
+		submitToFormspree( $("#contact-form") );
+	});
 
 	$(".bar-chart").appear({ force_process: true });
 
