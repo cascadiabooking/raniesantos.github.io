@@ -23,13 +23,18 @@ layout: default
 			</div><!-- meta (date) -->
 		</div><!-- metas -->
 
-	</div>
+	</div><!-- head -->
 
 	<div class="post--body">
 		{{ content }}
-	</div>
-	{% if site.disqus_shortname and page.comments == true %}
+	</div><!-- body -->
+
+	<div class="post--comments">
 		<h4>Comments</h4>
-		{% include disqus_comments.html %}
-	{% endif %}
+		{% if site.disqus_shortname and page.comments == true %}
+			{% include disqus_comments.html %}
+		{% else %}
+			<i class="fa fa-ban"></i> Comments are not enabled for this post.
+		{% endif %}
+	</div><!-- comments -->
 </article>

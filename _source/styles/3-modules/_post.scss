@@ -26,4 +26,13 @@
 			}
 		}
 	} // .post--head
+
+	&--body{
+		margin-bottom: 60px;
+	} // .post--body
+
+	&--comments{
+		max-width: 840px;
+		margin: 0 auto;
+	} // .post--comments
 } // .post

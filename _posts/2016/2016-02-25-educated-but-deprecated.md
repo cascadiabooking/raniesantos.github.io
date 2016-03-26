@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title: "Educated but Deprecated"
 ---
 
