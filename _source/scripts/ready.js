@@ -1,7 +1,8 @@
 function pageReady(){
-	Prism.highlightAll();
-
+	$("#menu--trigger").attr("checked", false);
 	$(".footer--year").text(new Date().getFullYear());
+
+	Prism.highlightAll();
 
 	setContactFormAction();
 

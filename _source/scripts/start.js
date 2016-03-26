@@ -1,4 +1,4 @@
 jQuery(document).ready(function() {
 	pageReady();
-	setupHistory(pageReady);
+	setupHistory(".main", pageReady);
 });

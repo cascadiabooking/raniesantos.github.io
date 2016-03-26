@@ -6,13 +6,13 @@ function findHeadHTML(data) {
 	return data.substring(headIni, headEnd);
 }
 
-function setupHistory(callback){
+function setupHistory(contentSection, callback){
 	var siteUrl = "http://"+(document.location.hostname||document.location.host);
 
 	//	Catch all internal links and push a new state. External links not affected.
 	$(document).delegate('a[href^="/"],a[href^="'+siteUrl+'"]', "click", function(e) {
 		e.preventDefault();
-		$("#menu--trigger").attr("checked", false);
+		window.scrollTo(0, 0);
 		History.pushState({}, "", this.pathname);
 	});
 
@@ -21,7 +21,7 @@ function setupHistory(callback){
 		document.title = "Loading...";
 		$.get(State.url, function(data){	// Use AJAX to get the new content.
 			$("head").html(findHeadHTML(data));
-			$(".main").html($(data).find(".main").html());
+			$(contentSection).html($(data).find(contentSection).html());
 			callback();
 		});
 	});
