@@ -8,7 +8,9 @@ function pageReady(){
 		e.preventDefault();
 
 		var submitToFormspree = function(form){
-			var submitUrl = getFormspreeSubmitUrl();
+			var submitUrl = getFormspreeSubmitUrl(),
+					$contactPage = $(".page-contact"),
+					$alertSending = $('<div class="alert"><i class="fa fa-spin fa-spinner"></i>Sending message...</div>');
 
 			$.ajax({
 				url: submitUrl,
@@ -16,13 +18,15 @@ function pageReady(){
 				data: $(form).serialize(),
 				dataType: "json",
 				beforeSend: function(){
-					console.log("Sending message...");
+					$contactPage.prepend($alertSending);
 				},
 				success: function(data){
-					console.log("Message sent.");
+					$alertSending.remove();
+					$contactPage.prepend('<div class="alert success"><i class="fa fa-check-circle"></i>Message sent.</div>');
 				},
 				error: function(err){
-					console.log("Something went wrong.");
+					$alertSending.remove();
+					$contactPage.prepend('<div class="alert danger"><i class="fa fa-times-circle"></i>Something went wrong. Try again.</div>');
 				}
 			});
 		};

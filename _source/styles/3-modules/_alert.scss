@@ -1,0 +1,22 @@
+.alert{
+	border: 0 solid $blue;
+	border-left-width: 5px;
+	padding: 10px 15px;
+	color: $blue;
+	background: #fff;
+	margin-bottom: 30px;
+
+	.fa{
+		margin-right: 5px;
+	}
+
+	&.success{
+		color: $green;
+		border-color: $green;
+	}
+
+	&.danger{
+		color: $red;
+		border-color: $red;
+	}
+}
