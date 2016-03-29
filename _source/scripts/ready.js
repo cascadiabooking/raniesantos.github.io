@@ -1,42 +1,43 @@
 function pageReady(){
-	$("#menu--trigger").attr("checked", false);
-	$(".footer--year").text(new Date().getFullYear());
+	var $menuTrigger = $("#menu--trigger"),
+			$footerYear = $(".footer--year"),
+			$contactForm = $("#contact-form"),
+			$alertContainer = $(".page-contact--alert-container"),
+			$barChart =  $(".bar-chart");
 
+	$menuTrigger.attr("checked", false);
+	$footerYear.text(new Date().getFullYear());
 	Prism.highlightAll();
 
-	$("#contact-form").submit(function(e){
+	$barChart.appear({ force_process: true });
+	$barChart.on("appear", function(event, $affected){
+		animateBarChart();
+	});
+
+	$contactForm.submit(function(e){
 		e.preventDefault();
 
-		var submitToFormspree = function(form){
-			var submitUrl = getFormspreeSubmitUrl(),
-					$contactPage = $(".page-contact"),
-					$alertSending = $('<div class="alert"><i class="fa fa-spin fa-spinner"></i>Sending message...</div>');
+		var submitToFormspree = function(){
 
 			$.ajax({
-				url: submitUrl,
+				url: getFormspreeSubmitURL(),
 				method: "POST",
-				data: $(form).serialize(),
+				data: $contactForm.serialize(),
 				dataType: "json",
 				beforeSend: function(){
-					$contactPage.prepend($alertSending);
+					showAlert($alertContainer, '<div class="alert"><i class="fa fa-spin fa-spinner"></i>Sending message...</div>');
 				},
 				success: function(data){
-					$alertSending.remove();
-					$contactPage.prepend('<div class="alert success"><i class="fa fa-check-circle"></i>Message sent.</div>');
+					showAlert($alertContainer, '<div class="alert success"><i class="fa fa-check-circle"></i>Message sent.</div>');
+					$contactForm.trigger("reset");
 				},
 				error: function(err){
-					$alertSending.remove();
-					$contactPage.prepend('<div class="alert danger"><i class="fa fa-times-circle"></i>Something went wrong. Try again.</div>');
+					showAlert($alertContainer, '<div class="alert danger"><i class="fa fa-times-circle"></i>Something went wrong. Try again.</div>');
 				}
 			});
 		};
 
-		submitToFormspree( $("#contact-form") );
+		submitToFormspree();
 	});
 
-	$(".bar-chart").appear({ force_process: true });
-
-	$(".bar-chart").on("appear", function(event, $affected){
-		animateBarChart();
-	});
-}
+} // end pageReady

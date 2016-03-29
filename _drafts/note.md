@@ -7,6 +7,7 @@
 	- bug: clicking send multiple times creates duplicate alerts
 - **post template:** comments & share links w:750px, exclude from copy
 - style the **social sharing links**
+- twitter cards
 - improve og image
 
 #### other
