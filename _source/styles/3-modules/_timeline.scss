@@ -6,6 +6,10 @@
 		padding: 0 10px 15px;
 		margin-bottom: 15px;
 
+		h4{
+			margin-bottom: 0;
+		}
+
 		span{
 			@extend %montserrat-uppercase;
 			font-weight: bold;

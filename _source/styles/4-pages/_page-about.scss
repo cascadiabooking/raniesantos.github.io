@@ -25,15 +25,6 @@
 		@include span(8 of 12 last);
 	}
 
-	// &--contact{
-	// 	text-align: center;
-	//
-	// 	.cta{
-	// 		background: $yahoo;
-	// 		margin-bottom: 30px;
-	// 	}
-	// }
-
 	@include media(670px) {
 		&--photo,
 		&--info{
