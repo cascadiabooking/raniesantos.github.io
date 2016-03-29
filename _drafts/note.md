@@ -3,7 +3,6 @@
 #### simple
 - try to remove useless wrapper div without breaking history script
 - **contact page:** use js form validator
-- **post template:** change width of comments & share section
 - improve og image
 
 #### other
