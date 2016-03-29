@@ -19,9 +19,9 @@
 {% endif %}
 
 {% if page.image %}
-	<meta property="og:image" content="/assets/img/post-img/{{ page.image }}">
-	<meta name="twitter:image:src" content="/assets/img/post-img/{{ page.image }}">
+	<meta property="og:image" content="{{ site.url }}/assets/img/post-img/{{ page.image }}">
+	<meta name="twitter:image:src" content="{{ site.url }}/assets/img/post-img/{{ page.image }}">
 {% else %}
-	<meta property="og:image" content="/assets/img/og-image-default.png">
-	<meta name="twitter:image:src" content="/assets/img/og-image-default.png">
+	<meta property="og:image" content="{{ site.url }}/assets/img/og-image-default.png">
+	<meta name="twitter:image:src" content="{{ site.url }}/assets/img/og-image-default.png">
 {% endif %}

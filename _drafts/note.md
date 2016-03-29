@@ -4,7 +4,6 @@
 - try to remove useless wrapper div without breaking history script
 - **contact page:** use js form validator
 - **post template:** change width of comments & share section
-- twitter cards
 - improve og image
 
 #### other
