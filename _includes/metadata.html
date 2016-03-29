@@ -1,18 +1,27 @@
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@ranietots32">
+
 {% if page.title %}
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="{{ page.title }}">
 	<meta property="og:description" content="{{ page.excerpt | strip_html | strip | truncatewords:30 }}">
+	<meta name="twitter:title" content="{{ page.title }}">
+	<meta name="twitter:description" content="{{ page.excerpt | strip_html | strip | truncatewords:30 }}">
 	<meta name="description" content="{{ page.excerpt | strip_html | strip | truncatewords:30 }}">
 	<meta name="author" content="{{ site.owner.name }}">
 {% else %}
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ site.title }}">
 	<meta property="og:description" content="{{ site.description }}">
+	<meta name="twitter:title" content="{{ site.title }}">
+	<meta name="twitter:description" content="{{ site.description }}">
 	<meta name="description" content="{{ site.description }}">
 {% endif %}
 
 {% if page.image %}
 	<meta property="og:image" content="/assets/img/post-img/{{ page.image }}">
+	<meta name="twitter:image:src" content="/assets/img/post-img/{{ page.image }}">
 {% else %}
 	<meta property="og:image" content="/assets/img/og-image-default.png">
+	<meta name="twitter:image:src" content="/assets/img/og-image-default.png">
 {% endif %}
