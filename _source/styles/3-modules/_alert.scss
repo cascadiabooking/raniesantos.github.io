@@ -1,4 +1,5 @@
 .alert{
+	font-weight: bold;
 	border-left: 5px solid $blue;
 	padding: 10px 15px;
 	color: $blue;
@@ -6,7 +7,7 @@
 	margin-bottom: 30px;
 
 	.fa{
-		margin-right: 5px;
+		margin-right: 10px;
 	}
 
 	&.success{

@@ -3,8 +3,6 @@
 #### simple
 - **contact page:**
 	- use js form validator
-	- set 1sec or 2sec delay before displaying success/danger alert
-	- bug: clicking send multiple times creates duplicate alerts
 - **post template:** comments & share links w:750px, exclude from copy
 - style the **social sharing links**
 - twitter cards
