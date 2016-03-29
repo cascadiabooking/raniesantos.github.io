@@ -1,9 +1,9 @@
 ## pending features
 
 #### simple
+- try to remove useless wrapper div without breaking history script
 - **contact page:** use js form validator
-- **post template:** comments & share links w:750px, exclude from copy
-- style the **social sharing links**
+- **post template:** change width of comments & share section
 - twitter cards
 - improve og image
 

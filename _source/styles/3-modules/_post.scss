@@ -31,8 +31,29 @@
 		margin-bottom: 60px;
 	} // .post--body
 
+	&--share,
 	&--comments{
 		max-width: 840px;
-		margin: 0 auto;
+		margin: 0 auto 30px;
 	} // .post--comments
+
+	&--share{
+
+		.cta{
+			width: 130px;
+			margin: 0 7px 10px 0;
+
+			&.facebook{
+				background: $facebook;
+			}
+
+			&.twitter{
+				background: $twitter;
+			}
+
+			&.google-plus{
+				background: $google-plus;
+			}
+		}
+	} // .post--share
 } // .post
