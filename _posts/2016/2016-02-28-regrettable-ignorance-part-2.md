@@ -17,7 +17,7 @@ When we were working on the application, we did backups and sent each other code
 - Because we dropped the idea of listing changes in a text file, it was tedious.
 - And because merging the files one by one was also tedious.
 
-All these problems can be solved by **Git**, its a Version Control System that tracks file changes so you don't have to remember them or list them down. It can also show you all the lines of code you removed and added.
+All these problems can be solved by **Git**, it's a Version Control System that tracks file changes so you don't have to remember them or list them down. It can also show you all the lines of code you removed and added.
 
 You can also store your code online in a *remote repository*. When you upload to (push) or download from (fetch/pull) it, only the changes themselves are transferred, not entire files and folders.
 
