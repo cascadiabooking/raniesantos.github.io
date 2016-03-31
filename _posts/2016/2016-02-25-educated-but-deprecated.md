@@ -8,7 +8,7 @@ Technology changes at an extremely fast pace. One might even say that it changes
 
 Back in college when I was studying I.T. I used to just take whatever material the professor gave us. But looking back now, I realize how much of it was so outdated it makes me cringe.
 
-## I learned something today! No, not really
+## I Learned Something Today! No, Not Really
 
 If you gained knowledge or learned a skill that the world doesn't really care about anymore, did you really learn something? Here are some of the things that should no longer be used and taught to anyone studying in the field of I.T.
 
@@ -31,10 +31,10 @@ In another one of our classes we needed to learn Photoshop, which is good. And w
 
 In that class we were required to design a logo with Photoshop and an animated website header with Flash. Even though I already knew that Flash was a no-no back then, I was forced to add the flash header to the website against my better judgement.
 
-### Code Editors? I use Notepad
+### Code Editors? I Use Notepad
 
 Now this one in particular isn't about outdated technology, it's more about using better tools to make learning and working on projects easier. When I first discovered **Notepad++** I loved it (*NOTE: I use Sublime Text and Atom now*). It was so much better than the Windows Notepad, but it's still beginner-friendly, it's not too complex compared to other feature-packed code editors, and it's **FREE**. I installed it on the university computers using the zip version to bypass restrictions. It was then that I asked myself, *"Why don't they have this on all the computers?"* surely that could easily be done since there aren't any issues like cost and restrictions on how many times you can copy and install it. Why has no one jumped on this yet?
 
-## Can you blame them?
+## Can You Blame Them?
 
 At the end of the day, *it is the responsibility of both the provider and the recipient of the information to verify how recent and accurate it is*. So no, I can't blame them, but I still think and hope that they could do better.
