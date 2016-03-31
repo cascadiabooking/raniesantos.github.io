@@ -15,12 +15,11 @@
 	}
 
 	&--date{
-		@extend %montserrat-uppercase;
+		@include montserrat-uppercase-bold;
 		display: block;
 		padding: 13px 0;
 		color: $theme-color-1;
 		text-align: center;
-		font-weight: bold;
 	}
 
 	&--footer{

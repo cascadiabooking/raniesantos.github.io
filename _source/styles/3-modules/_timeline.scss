@@ -11,8 +11,7 @@
 		}
 
 		span{
-			@extend %montserrat-uppercase;
-			font-weight: bold;
+			@include montserrat-uppercase-bold;
 			color: $theme-color-1;
 		}
 	}

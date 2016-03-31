@@ -5,8 +5,7 @@ body{
 }
 
 h1, h2, h3, h4{
-	@extend %montserrat-uppercase;
-	font-weight: bold;
+	@include montserrat-uppercase-bold;
 	color: $text-color-accent;
 	margin-bottom: 15px;
 	line-height: 1.2;

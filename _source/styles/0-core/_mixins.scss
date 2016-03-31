@@ -24,3 +24,14 @@
 		@content;
 	}
 }
+
+@mixin hidden {
+	display: none;
+	visibility: hidden;
+}
+
+@mixin montserrat-uppercase-bold{
+	font-family: "Montserrat";
+	text-transform: uppercase;
+	font-weight: bold;
+}

@@ -10,7 +10,7 @@
 	}
 
 	#menu--trigger{
-		@extend %hidden;
+		@include hidden;
 	}
 
 	&--links{
