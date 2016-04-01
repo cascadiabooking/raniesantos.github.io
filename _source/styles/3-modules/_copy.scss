@@ -9,6 +9,12 @@
 		color: $text-color-accent;
 	}
 
+	code:not([class*="language-"]){
+		font-family: Consolas, monospace;
+		background: #ccc;
+		padding: 3px;
+	}
+
 	ul{
 		list-style-type: disc;
 	}
