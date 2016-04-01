@@ -3,6 +3,7 @@
 #### simple
 - try to remove useless wrapper div without breaking history script
 - **contact page:** use js form validator
+- enable/disable submit button in submitContactForm() function
 - improve og image
 
 #### other

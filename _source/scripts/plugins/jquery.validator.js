@@ -21,6 +21,7 @@
 				},
 
 				doReplacements = function(message, fieldName, parameters){
+					// if alias exists, set fieldName = alias
 					message = message.replace(":fieldName", fieldName);
 
 					$.each(parameters.split(","), function(key, value){
