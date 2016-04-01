@@ -4,6 +4,8 @@
 	max-width: 960px;
 
 	&--head{
+		margin-bottom: 30px;
+
 		&--metas{
 			@include clearfix;
 			color: $theme-color-1;

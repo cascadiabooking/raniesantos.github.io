@@ -5,8 +5,6 @@ $contactForm.submit(function(e){
 
 	$contactForm.validator({
 		rules: {
-			"_gotcha": "",
-			"_subject": "",
 			"name": "required|alpha_space|between:2,80",
 			"_replyto": "required|email",
 			"message": "required"
