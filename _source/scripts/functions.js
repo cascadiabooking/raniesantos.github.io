@@ -34,6 +34,10 @@ function animateBarChart(){
 	});
 }
 
+function strContains(haystack, needle){
+	return (haystack.indexOf(needle) >= 0) ? true : false;
+}
+
 function getFormSubmitURL(){
 	var base64_email = "cmFuc2FuMzJAeWFob28uY29t";
 	return "//formspree.io/" + atob(base64_email);
@@ -52,13 +56,16 @@ function submitContactForm($contactForm){
 		data: $contactForm.serialize(),
 		dataType: "json",
 		beforeSend: function(){
+			// disable submit button
 			showAlert($alertContainer, '<div class="alert"><i class="fa fa-spin fa-spinner"></i>Sending message...</div>');
 		},
 		success: function(data){
+			// enable submit button
 			showAlert($alertContainer, '<div class="alert success"><i class="fa fa-check-circle"></i>Message sent.</div>');
 			$contactForm.trigger("reset");
 		},
 		error: function(err){
+			// enable submit button
 			showAlert($alertContainer, '<div class="alert danger"><i class="fa fa-times-circle"></i>Something went wrong. Try again.</div>');
 		}
 	});

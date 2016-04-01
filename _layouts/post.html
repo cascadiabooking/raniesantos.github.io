@@ -9,7 +9,7 @@ layout: default
 		<div class="post--head--metas">
 			<div class="post--head--meta">
 				<span class="post--head--meta--icon">
-					<img src="assets/img/my-photo-small.jpg">
+					<img src="assets/img/my-photo-small.jpg" alt="Photo of Me">
 				</span>
 				{{ site.owner.name }}
 			</div><!-- meta (author) -->
@@ -19,7 +19,7 @@ layout: default
 					<i class="fa fa-circle fa-stack-2x"></i>
 					<i class="fa fa-calendar fa-stack-1x fa-inverse"></i>
 				</span>
-				<time datetime="{{ page.date | date: "%Y-%m-%d" }}" pubdate>{{ page.date | date: "%B %-d, %Y" }}</time>
+				<time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d, %Y" }}</time>
 			</div><!-- meta (date) -->
 		</div><!-- metas -->
 

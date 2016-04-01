@@ -13,9 +13,18 @@ function pageReady(){
 		animateBarChart();
 	});
 
-	$contactForm.submit(function(e){
-		e.preventDefault();
-		submitContactForm($contactForm);
+	$contactForm.validator({
+		rules: {
+			"name": "required|alpha_space|str_between:2,80",
+			"_replyto": "required|email",
+			"message": "required|str_min:20"
+		},
+		passed: function(){
+			submitContactForm($contactForm);
+		},
+		failed: function(){
+			console.log("validator failed");
+		}
 	});
 
 } // end pageReady
