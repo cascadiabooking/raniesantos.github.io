@@ -18,4 +18,9 @@
 	.fa{
 		margin-right: 5px;
 	}
+
+	&:disabled{
+		box-shadow: none;
+		opacity: 0.5;
+	}
 }

@@ -48,7 +48,8 @@ function showAlert($container, $alert){
 }
 
 function submitContactForm($contactForm){
-	var $alertContainer = $(".page-contact--alert-container");
+	var $alertContainer = $(".page-contact--alert-container"),
+			$submitButton = $contactForm.find('[type="submit"]');
 
 	$.ajax({
 		url: getFormSubmitURL(),
@@ -56,16 +57,16 @@ function submitContactForm($contactForm){
 		data: $contactForm.serialize(),
 		dataType: "json",
 		beforeSend: function(){
-			// disable submit button
+			$submitButton.attr("disabled", true);
 			showAlert($alertContainer, '<div class="alert"><i class="fa fa-spin fa-spinner"></i>Sending message...</div>');
 		},
 		success: function(data){
-			// enable submit button
+			$submitButton.attr("disabled", false);
 			showAlert($alertContainer, '<div class="alert success"><i class="fa fa-check-circle"></i>Message sent.</div>');
 			$contactForm.trigger("reset");
 		},
 		error: function(err){
-			// enable submit button
+			$submitButton.attr("disabled", false);
 			showAlert($alertContainer, '<div class="alert danger"><i class="fa fa-times-circle"></i>Something went wrong. Try again.</div>');
 		}
 	});
