@@ -17,11 +17,12 @@ function pageReady(){
 		rules: {
 			"name": "required|alpha_space|str_between:2,80",
 
-			/* allow the use of aliases
-			so error can display Email as fieldName */
+			/* allow the use of aliases to
+			replace fieldName in error */
 			"_replyto": "required|email",
 			"message": "required|str_min:20"
 		},
+		errorClass: "form--error",
 		passed: function(){
 			submitContactForm($contactForm);
 		},

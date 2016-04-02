@@ -2,7 +2,9 @@
 
 #### simple
 - try to remove useless wrapper div without breaking history script
-- **contact page:** use js form validator
+- js form validator:
+	- allow the use of aliases to replace fieldName in error
+	- make email validation rule/function work
 - enable/disable submit button in submitContactForm() function
 - improve og image
 

@@ -2,10 +2,13 @@
 
 	$.fn.validator = function(args){
 		var $form = this,
+				errors = {},
+
+				// options
 				rules = args.rules,
+				errorClass = args.errorClass,
 				passedCallback = args.passed,
 				failedCallback = args.failed,
-				errors = {},
 
 				messages = {
 					required: "The :fieldName field is required.",
@@ -31,11 +34,15 @@
 					return message;
 				},
 
+				errorsHas = function(fieldName){
+					return (fieldName in errors);
+				},
+
 				addError = function(fieldName, ruleName, parameters){
 					var message = getMessage(ruleName),
 							message = doReplacements(message, fieldName, parameters);
 
-					if( !(fieldName in errors) ){
+					if(errorsHas(fieldName) === false){
 						errors[fieldName] = [];
 					}
 
@@ -73,10 +80,10 @@
 					}
 				},
 
-				validate = function(fieldName, rule){
+				validate = function(fieldName, rule, $field){
 					var ruleName = rule,
 							parameters = "",
-							value = $form.find("[name='" +fieldName+ "']").val();
+							value = $field.val();
 
 					if(strContains(rule, ":")){
 						ruleName = rule.split(":")[0];
@@ -91,14 +98,20 @@
 		$form.submit(function(e){
 			e.preventDefault();
 			errors = {};
+			$form.find("." + errorClass).remove();
 
 			$.each(rules, function(fieldName, fieldRules){
+				$field = $form.find('[name="' +fieldName+ '"]');
+
 				$.each(fieldRules.split("|"), function(key, rule){
-					validate(fieldName, rule);
+					validate(fieldName, rule, $field);
 				}); // loop fieldRules
+
+				if(errorsHas(fieldName)){
+					$field.after('<span class="' +errorClass+ '">' +errors[fieldName][0]+ '</span>');
+				}
 			}); // loop rules
 
-			console.log(errors);
 			if( $.isEmptyObject(errors) ){
 				passedCallback();
 			}else{
