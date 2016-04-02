@@ -15,11 +15,11 @@ function pageReady(){
 
 	$contactForm.validator({
 		rules: {
-			"name": "required|alpha_space|str_between:2,80",
+			"name": "required|str_between:2,80|alpha_space",
 
 			/* allow the use of aliases to
 			replace fieldName in error */
-			"_replyto": "required|email",
+			"_replyto": "required|str_max:70|email",
 			"message": "required|str_min:20"
 		},
 		errorClass: "form--error",

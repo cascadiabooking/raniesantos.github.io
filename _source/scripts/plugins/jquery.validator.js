@@ -70,13 +70,13 @@
 					},
 
 					email: function(value, parameters){
-						// this function is empty
-						return true;
+						var reg = /^[A-Z0-9._-]+@([A-Z0-9-]+\.)+[A-Z]{2,15}$/i;
+						return reg.test($.trim(value));
 					},
 
 					alpha_space: function(value, parameters){
-						var	match = $.trim(value).match(/^[a-zA-Z ]+$/);
-						return (match !== null);
+						var reg = /^[a-zA-Z ]+$/;
+						return reg.test($.trim(value));
 					}
 				},
 
@@ -100,23 +100,25 @@
 			errors = {};
 			$form.find("." + errorClass).remove();
 
-			$.each(rules, function(fieldName, fieldRules){
-				$field = $form.find('[name="' +fieldName+ '"]');
+			setTimeout(function () {
+				$.each(rules, function(fieldName, fieldRules){
+					$field = $form.find('[name="' +fieldName+ '"]');
 
-				$.each(fieldRules.split("|"), function(key, rule){
-					validate(fieldName, rule, $field);
-				}); // loop fieldRules
+					$.each(fieldRules.split("|"), function(key, rule){
+						validate(fieldName, rule, $field);
+					}); // loop fieldRules
 
-				if(errorsHas(fieldName)){
-					$field.after('<span class="' +errorClass+ '">' +errors[fieldName][0]+ '</span>');
+					if(errorsHas(fieldName)){
+						$field.after('<span class="' +errorClass+ '">' +errors[fieldName][0]+ '</span>');
+					}
+				}); // loop rules
+
+				if( $.isEmptyObject(errors) ){
+					passedCallback();
+				}else{
+					failedCallback();
 				}
-			}); // loop rules
-
-			if( $.isEmptyObject(errors) ){
-				passedCallback();
-			}else{
-				failedCallback();
-			}
+	    }, 500); // timeout
 
 		}); // $form submit
 
