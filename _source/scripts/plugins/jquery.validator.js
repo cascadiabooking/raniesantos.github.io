@@ -5,11 +5,11 @@
 				errors = {},
 
 				args = $.extend({
-					rules: {}, // REQUIRED***
-					customFieldNames: {}, // optional
-					errorClass: "error", // optional
-					passed: $.noop, // REQUIRED***
-					failed: $.noop // optional
+					rules: {},
+					customFieldNames: {},
+					errorClass: "error",
+					passed: function(){ $form.trigger("submit"); },
+					failed: $.noop
 				}, options),
 
 				rules = args.rules,
@@ -108,28 +108,33 @@
 
 		$form.submit(function(e){
 			e.preventDefault();
-			errors = {};
-			$form.find("." + errorClass).remove();
 
-			setTimeout(function () {
-				$.each(rules, function(fieldName, fieldRules){
-					$field = $form.find('[name="' +fieldName+ '"]');
+			if( $.isEmptyObject(rules) ){
+				console.log("ERROR: the 'rule' option is required for the validator plugin");
+			}else{
+				errors = {};
+				$form.find("." + errorClass).remove();
 
-					$.each(fieldRules.split("|"), function(key, rule){
-						validate(fieldName, rule, $field);
-					}); // loop fieldRules
+				setTimeout(function(){
+					$.each(rules, function(fieldName, fieldRules){
+						$field = $form.find('[name="' +fieldName+ '"]');
 
-					if(errorsHas(fieldName)){
-						$field.after('<span class="' +errorClass+ '">' +errors[fieldName][0]+ '</span>');
+						$.each(fieldRules.split("|"), function(key, rule){
+							validate(fieldName, rule, $field);
+						}); // loop fieldRules
+
+						if(errorsHas(fieldName)){
+							$field.after('<span class="' +errorClass+ '">' +errors[fieldName][0]+ '</span>');
+						}
+					}); // loop rules
+
+					if( $.isEmptyObject(errors) ){
+						passedCallback();
+					}else{
+						failedCallback();
 					}
-				}); // loop rules
-
-				if( $.isEmptyObject(errors) ){
-					passedCallback();
-				}else{
-					failedCallback();
-				}
-	    }, 500); // timeout
+		    }, 500); // timeout
+			} // check rules
 
 		}); // $form submit
 

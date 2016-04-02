@@ -3,7 +3,6 @@
 #### simple
 - try to remove useless wrapper div without breaking history script
 - remove alerts when submit button is clicked
-- log errors from validator if required options not provided
 - improve og image
 
 #### other
