@@ -2,7 +2,8 @@
 
 #### simple
 - try to remove useless wrapper div without breaking history script
-- js form validator: allow the use of aliases to replace fieldName in error
+- remove alerts when submit button is clicked
+- log errors from validator if required options not provided
 - improve og image
 
 #### other

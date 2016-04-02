@@ -1,11 +1,19 @@
 (function($){
 
-	$.fn.validator = function(args){
+	$.fn.validator = function(options){
 		var $form = this,
 				errors = {},
 
-				// options
+				args = $.extend({
+					rules: {}, // REQUIRED***
+					customFieldNames: {}, // optional
+					errorClass: "error", // optional
+					passed: $.noop, // REQUIRED***
+					failed: $.noop // optional
+				}, options),
+
 				rules = args.rules,
+				customFieldNames = args.customFieldNames,
 				errorClass = args.errorClass,
 				passedCallback = args.passed,
 				failedCallback = args.failed,
@@ -23,9 +31,12 @@
 					return messages[ruleName];
 				},
 
+				getFieldName = function(fieldName){
+					return (fieldName in customFieldNames) ? customFieldNames[fieldName] : fieldName;
+				},
+
 				doReplacements = function(message, fieldName, parameters){
-					// if alias exists, set fieldName = alias
-					message = message.replace(":fieldName", fieldName);
+					message = message.replace(":fieldName", getFieldName(fieldName));
 
 					$.each(parameters.split(","), function(key, value){
 						message = message.replace(":p"+key, value);

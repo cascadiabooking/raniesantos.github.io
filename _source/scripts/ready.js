@@ -16,18 +16,15 @@ function pageReady(){
 	$contactForm.validator({
 		rules: {
 			"name": "required|str_between:2,80|alpha_space",
-
-			/* allow the use of aliases to
-			replace fieldName in error */
 			"_replyto": "required|str_max:70|email",
 			"message": "required|str_min:20"
+		},
+		customFieldNames: {
+			"_replyto": "email",
 		},
 		errorClass: "form--error",
 		passed: function(){
 			submitContactForm($contactForm);
-		},
-		failed: function(){
-			console.log("validator failed");
 		}
 	});
 
