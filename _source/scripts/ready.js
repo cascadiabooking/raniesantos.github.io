@@ -23,6 +23,9 @@ function pageReady(){
 			"_replyto": "email",
 		},
 		errorClass: "form--error",
+		start: function(){
+			$(".page-contact--alert-container").empty()
+		},
 		passed: function(){
 			submitContactForm($contactForm);
 		}

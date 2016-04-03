@@ -2,7 +2,6 @@
 
 #### simple
 - try to remove useless wrapper div without breaking history script
-- remove alerts when submit button is clicked
 - improve og image
 
 #### other

@@ -8,6 +8,7 @@
 					rules: {},
 					customFieldNames: {},
 					errorClass: "error",
+					start: $.noop,
 					passed: function(){ $form.trigger("submit"); },
 					failed: $.noop
 				}, options),
@@ -15,6 +16,7 @@
 				rules = args.rules,
 				customFieldNames = args.customFieldNames,
 				errorClass = args.errorClass,
+				startCallback = args.start,
 				passedCallback = args.passed,
 				failedCallback = args.failed,
 
@@ -114,6 +116,7 @@
 			}else{
 				errors = {};
 				$form.find("." + errorClass).remove();
+				startCallback();
 
 				setTimeout(function(){
 					$.each(rules, function(fieldName, fieldRules){
