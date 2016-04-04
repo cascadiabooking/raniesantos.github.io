@@ -19,7 +19,7 @@ My recommendations:
 - **Zurb Foundation**
 - **Twitter Bootstrap**
 
-As I write this, Bootstrap is still the most popular CSS framework, but I prefer Foundation for the following reasons:
+As I write this, Bootstrap is still the most popular front-end framework, but I prefer Foundation for the following reasons:
 
 - Foundation is written in *Sass* (my preferred CSS preprocessor) while Bootstrap is written in *Less*.
 - I conducted an experiment where I created two identical layouts using these two frameworks. The HTML I wrote in Foundation used fewer elements and class names and was much cleaner to look at.
