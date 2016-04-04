@@ -29,6 +29,12 @@
 					alpha_space: "The :fieldName may only contain letters and spaces."
 				},
 
+				splitRules = function(){
+					$.each(rules, function(fieldName, rulesString){
+						rules[fieldName] = rulesString.split("|");
+					});
+				},
+
 				getMessage = function(ruleName){
 					return messages[ruleName];
 				},
@@ -62,7 +68,7 @@
 					errors[fieldName].push(message);
 				}
 
-				check = {
+				method = {
 					required: function(value, parameters){
 						return ($.trim(value) !== "");
 					},
@@ -93,6 +99,14 @@
 					}
 				},
 
+				hasRule = function(fieldName, rule){
+					return (fieldName in rules && rules[fieldName].indexOf(rule) > -1);
+				},
+
+				isValidatable = function(fieldName, value){
+					return ( hasRule(fieldName, "required") || method.required(value, "") );
+				},
+
 				validate = function(fieldName, rule, $field){
 					var ruleName = rule,
 							parameters = "",
@@ -103,10 +117,12 @@
 						parameters = rule.split(":")[1];
 					}
 
-					if(check[ruleName](value, parameters) === false){
+					if(isValidatable(fieldName, value) && method[ruleName](value, parameters) === false){
 						addError(fieldName, ruleName, parameters);
 					}
 				};
+
+		splitRules();
 
 		$form.submit(function(e){
 			e.preventDefault();
@@ -122,7 +138,7 @@
 					$.each(rules, function(fieldName, fieldRules){
 						$field = $form.find('[name="' +fieldName+ '"]');
 
-						$.each(fieldRules.split("|"), function(key, rule){
+						$.each(fieldRules, function(key, rule){
 							validate(fieldName, rule, $field);
 						}); // loop fieldRules
 
@@ -137,7 +153,7 @@
 						failedCallback();
 					}
 		    }, 500); // timeout
-			} // check rules
+			} // check if rules were defined
 
 		}); // $form submit
 
