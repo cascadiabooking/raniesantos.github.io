@@ -1,6 +1,6 @@
 (function($){
 
-	$.fn.validator = function(options){
+	$.fn.vastia = function(options){
 		var $form = this,
 				errors = {},
 
@@ -112,7 +112,7 @@
 			e.preventDefault();
 
 			if( $.isEmptyObject(rules) ){
-				console.log("ERROR: the 'rule' option is required for the validator plugin");
+				console.log("ERROR: the 'rule' option is required for the vastiajs plugin");
 			}else{
 				errors = {};
 				$form.find("." + errorClass).remove();

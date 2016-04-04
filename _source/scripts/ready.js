@@ -13,7 +13,7 @@ function pageReady(){
 		animateBarChart();
 	});
 
-	$contactForm.validator({
+	$contactForm.vastia({
 		rules: {
 			"name": "required|str_between:2,80|alpha_space",
 			"_replyto": "required|str_max:70|email",
