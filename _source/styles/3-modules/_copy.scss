@@ -11,7 +11,7 @@
 
 	code:not([class*="language-"]){
 		font-family: Consolas, monospace;
-		background: #ccc;
+		background: #d7d7d7;
 		padding: 3px;
 	}
 
@@ -28,7 +28,9 @@
 		}
 	}
 
-	// li{}
+	li{
+		margin-bottom: 5px;
+	}
 
 	dt{
 		font-weight: bold;

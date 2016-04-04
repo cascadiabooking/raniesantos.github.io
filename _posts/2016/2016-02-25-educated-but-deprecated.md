@@ -21,7 +21,7 @@ A lot of lectures we've been given were riddled with deprecated **HTML** tags. T
 - `<b>`, `<i>`, and `<u>`
 - `<applet>`
 
-The reason these have been deprecated is mainly because we have **CSS** now. The first 3 items list 5 old *presentational* tags. They style the appearance of the HTML in a certain way. The problem with those tags is that they severely clutter up the *structure* of your page. Since they're in the same space like that, whether you are changing the structure or the presentation of your page, either way it will be very tedious. Nowadays - thanks to CSS - we are now able to **separate the structure and presentation**.
+The reason these have been deprecated is mainly because we have **CSS** now. The first 3 items in the list above are 5 old *presentational* tags. They style the appearance of the HTML in a certain way. The problem with those tags is that they severely clutter up the *structure* of your page. Since they're in the same space like that, whether you are changing the structure or the presentation of your page, either way it will be very tedious. Nowadays - thanks to CSS - we are now able to **separate the structure and presentation**.
 
 In our **PHP** classes literally **ALL** of the material still contained the `mysql_` functions. During that time they were only deprecated, but at the time of writing this, **PHP 7** has already been released and these functions have been **completely removed** which means they simply won't work anymore.
 
