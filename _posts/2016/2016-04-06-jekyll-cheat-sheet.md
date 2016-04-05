@@ -187,30 +187,36 @@ $.ajax({
 
 ## Sharing Posts to Other Sites
 
-If you follow any major blogs or news sites on Facebook you've probably noticed that they usually display with images and neatly presented information. If you want pages of your Jekyll site to display like that, you need to add **Open Graph** tags which are recognized by both Facebook and Google+, and **Twitter Card** tags for Twitter.
+If you follow any major blogs or news sites on Facebook you've probably noticed that they usually display with images and neatly presented information. If you want pages of your Jekyll site to display like that, you need to add **Open Graph** tags which are recognized by both Facebook and Google+, and **Summary Card** tags for Twitter.
 
 ### Metadata in the <head>
 
-BLA BLA BLA BLA BLA
+The block of code below contains most of the necessary tags for both. Note that most of the information is being pulled in from `_config.yml` so you should check first whether the options used below exist in your config file.
 
 ```html
 {% raw %}<meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="{{ site.owner.twitterhandle }}">
 
-{% if page.title %}
+{% if page.id %}
+	<!-- This block is rendered if the page is a blog post -->
 	<meta property="og:type" content="article">
 	<meta property="og:title" content="{{ page.title }}">
 	<meta property="og:description" content="{{ page.excerpt | strip_html | strip | truncatewords:30 }}">
+
 	<meta name="twitter:title" content="{{ page.title }}">
 	<meta name="twitter:description" content="{{ page.excerpt | strip_html | strip | truncatewords:30 }}">
+
 	<meta name="description" content="{{ page.excerpt | strip_html | strip | truncatewords:30 }}">
-	<meta name="author" content="{{ site.owner.name }}"> <!-- change this if someone besides you write posts -->
+	<meta name="author" content="{{ site.owner.name }}"> <!-- change this if someone besides you writes posts -->
 {% else %}
+	<!-- This block is rendered for all other pages of the site -->
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="{{ site.title }}">
 	<meta property="og:description" content="{{ site.description }}">
+
 	<meta name="twitter:title" content="{{ site.title }}">
 	<meta name="twitter:description" content="{{ site.description }}">
+
 	<meta name="description" content="{{ site.description }}">
 {% endif %}
 
@@ -218,24 +224,40 @@ BLA BLA BLA BLA BLA
 	<meta property="og:image" content="{{ site.url }}/assets/img/post-img/{{ page.image }}">
 	<meta name="twitter:image:src" content="{{ site.url }}/assets/img/post-img/{{ page.image }}">
 {% else %}
-	<meta property="og:image" content="{{ site.url }}/assets/img/og-image-default.png">
-	<meta name="twitter:image:src" content="{{ site.url }}/assets/img/og-image-default.png">
+	<meta property="og:image" content="{{ site.url }}/assets/img/image.png">
+	<meta name="twitter:image:src" content="{{ site.url }}/assets/img/image.png">
 {% endif %}{% endraw %}
 ```
 
-### Share Buttons
+If you want to make sure the tags you added are valid, each of the sites have their own validators where you can paste your URLs to have them checked.
+
+### Share Links
+
+Now that your pages display nicely when they're shared, you should also make them easier to share so that the user doesn't have to copy the URL, open another browser tab, and paste the link. Below is a snippet of sharing links for Facebook, Twitter, and Google+.
 
 ```html
-<a class="cta facebook" href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
 	onclick="window.open(this.href, 'facebook-share','width=580,height=610');return false;" title="Share on Facebook">
-	<i class="fa fa-facebook"></i> Facebook
+	Facebook
 </a>
-<a class="cta twitter" href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}"
+<a href="https://twitter.com/intent/tweet?text={{ page.title }}&url={{ site.url }}{{ page.url }}"
 	onclick="window.open(this.href, 'twitter-share', 'width=550,height=260');return false;" title="Share on Twitter">
-	<i class="fa fa-twitter"></i> Twitter
+	Twitter
 </a>
-<a class="cta google-plus" href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
-	onclick="window.open(this.href, 'google-plus-share', 'width=490,height=460');return false;" title="Share on Google+">
-	<i class="fa fa-google-plus"></i> Google+
+<a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
+	onclick="window.open(this.href, 'google-plus-share', 'width=490,height=600');return false;" title="Share on Google+">
+	Google+
 </a>
+```
+
+### Quick Note About Kramdown and Rouge
+
+Jekyll uses Kramdown as its markdown engine, which uses Rouge as its code highlighter. If for some reason you don't want to use Rouge and use something else like Prism, that's a problem because Kramdown applies the class `highlighter-rouge` to code blocks which doesn't work with Prism. You can disable this behavior by adding the option below to your config file.
+
+```yaml
+## _config.yml
+
+kramdown:
+  syntax_highlighter_opts:
+    disable : true
 ```
