@@ -236,7 +236,7 @@ If you want to make sure the tags you added are valid, each of the sites have th
 Now that your pages display nicely when they're shared, you should also make them easier to share so that the user doesn't have to copy the URL, open another browser tab, and paste the link. Below is a snippet of sharing links for Facebook, Twitter, and Google+.
 
 ```html
-<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
+{% raw %}<a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
 	onclick="window.open(this.href, 'facebook-share','width=580,height=610');return false;" title="Share on Facebook">
 	Facebook
 </a>
@@ -247,7 +247,7 @@ Now that your pages display nicely when they're shared, you should also make the
 <a href="https://plus.google.com/share?url={{ site.url }}{{ page.url }}"
 	onclick="window.open(this.href, 'google-plus-share', 'width=490,height=600');return false;" title="Share on Google+">
 	Google+
-</a>
+</a>{% endraw %}
 ```
 
 ### Quick Note About Kramdown and Rouge

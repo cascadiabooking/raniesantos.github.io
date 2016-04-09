@@ -2,6 +2,9 @@ assets/css/
 assets/js/
 .gitattributes
 .gitignore
+bower.json
+package.json
+gulpfile.js
 favicon.ico
 favicon.png
 apple-touch-icon.png
