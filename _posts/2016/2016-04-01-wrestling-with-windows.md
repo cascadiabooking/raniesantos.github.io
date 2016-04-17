@@ -18,9 +18,11 @@ The Windows Command Prompt itself is different. If you manage your own server, i
 
 One thing Windows lacks is a built-in **SSH** client. To fill this hole you need to install and configure **PuTTY**. Again, not a huge problem but it would be better if Windows included SSH by default.
 
-### Browsersync
+### Node.js and Ruby
 
-If there's one thing web developers do a lot of, it's *refreshing*. Luckily, we now have various *live-reload tools*, the most popular of which is **Browsersync**. But trying to install Browsersync on Windows comes with many errors and headaches. The problem originates from its dependencies like **node-gyp** which needs **Visual C++ libraries** to work properly.
+Technologies like **Node.js** and **Ruby** are meant to run on UNIX-based systems, so they may not work as you expect on Windows. For instance, I've had problems trying to install **Browsersync** because it has a dependency called **node-gyp** which relies on **Visual C++ libraries** to work properly. I've also had issues with certain terminal packages for Atom that were caused by leaking Node environment variables.
+
+As for Ruby, I actually don't have much knowledge on this language yet, but I've seen many complaints that its slow on Windows, and that a lot of gems aren't supported.
 
 ## A Look at Other Operating Systems
 
@@ -33,7 +35,7 @@ Someone once asked me to help figure out why images won't display after deployin
 Other advantages of a Linux desktop:
 
 - Built-in SSH client
-- Browsersync just works
+- Node.js and Ruby just work
 - Immunity to the countless viruses and malware affecting Windows
 - Its **FREE**
 
