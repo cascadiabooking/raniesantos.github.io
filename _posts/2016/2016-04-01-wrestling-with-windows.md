@@ -20,7 +20,7 @@ One thing Windows lacks is a built-in **SSH** client. To fill this hole you need
 
 ### Node.js and Ruby
 
-Technologies like **Node.js** and **Ruby** are meant to run on UNIX-based systems, so they may not work as you expect on Windows. For instance, I've had problems trying to install **Browsersync** because it has a dependency called **node-gyp** which relies on **Visual C++ libraries** to work properly. I've also had issues with certain terminal packages for Atom that were caused by leaking Node environment variables.
+Technologies like **Node.js** and **Ruby** are meant to run on Unix-based systems, so they may not work as you expect on Windows. For instance, I've had problems trying to install **Browsersync** because it has a dependency called **node-gyp** which relies on **Visual C++ libraries** to work properly. I've also had issues with certain terminal packages for Atom that were caused by leaking Node environment variables.
 
 As for Ruby, I actually don't have much knowledge on this language yet, but I've seen many complaints that its slow on Windows, and that a lot of gems aren't supported.
 
@@ -35,7 +35,7 @@ Someone once asked me to help figure out why images won't display after deployin
 Other advantages of a Linux desktop:
 
 - Built-in SSH client
-- Node.js and Ruby just work
+- Node.js, Ruby, and other technologies meant to run on servers just work
 - Immunity to the countless viruses and malware affecting Windows
 - Its **FREE**
 
@@ -50,7 +50,7 @@ One important thing to note though is that a lot of proprietary software is unav
 
 ### OS X
 
-Like Linux distros, Mac OS X is a UNIX-based operating system. It shares a lot of the same advantages such as having SSH built-in, a case-sensitive file system, and safety against most malware. Additionally, you get access to a lot more proprietary software compared to Linux.
+Like Linux distros, Mac OS X is a Unix-based operating system. It shares a lot of the same advantages such as having SSH built-in, a case-sensitive file system, and safety against most malware. Additionally, you get access to a lot more proprietary software compared to Linux.
 
 But the greatest barrier to entry for OS X remains to be its price. This is because Macs are premium products. They have excellent hardware and if you were to purchase another machine with comparable specs, it would more or less be around the same price range.
 
