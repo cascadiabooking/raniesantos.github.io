@@ -5,13 +5,28 @@
 	@include clearfix;
 
 	a{
-		padding: 18px;
 		display: block;
 	}
 
 	&--brand{
+		padding: 10px;
 		float: left;
-		text-transform: uppercase;
 		background: $theme-color-1;
+
+		&--title{
+			text-transform: uppercase;
+			vertical-align: middle;
+			font: {
+				weight: bold;
+				size: 1.1em;
+			}
+		}
+
+		&--logo{
+			margin-right: 3px;
+			height: 35px;
+			vertical-align: middle;
+			display: inline-block;
+		}
 	}
 } // .header

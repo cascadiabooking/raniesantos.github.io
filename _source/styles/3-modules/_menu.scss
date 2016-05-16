@@ -20,11 +20,12 @@
 		@include clearfix;
 
 		&--link{
+			padding: 18px;
 			float: left;
 		}
 	}
 
-	@include media(560px) {
+	@include media(600px) {
 		float: none;
 
 		&--hamburger{
