@@ -5,7 +5,20 @@
 	<div class="wrapper">
 		{% include header.html %}
 		<main class="main">
-			{{ content }}
+			{% if page.image %}
+				<div class="hero">
+					<img src="/assets/img/post-img/{{ page.image }}" alt="" class="hero--image">
+					{% if page.id %}
+						<h1 class="hero--text">{{ page.title }}</h1>
+					{% else if page.hero-text %}
+						<h1 class="hero--text">{{ page.hero-text }}</h1>
+					{% endif %}
+				</div>
+			{% endif %}
+
+			<div class="content">
+				{{ content }}
+			</div>
 		</main>
 		{% include footer.html %}
 	</div><!-- .wrapper -->

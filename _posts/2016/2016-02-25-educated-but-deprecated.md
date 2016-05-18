@@ -2,6 +2,7 @@
 layout: post
 comments: true
 title: "Educated but Deprecated"
+image: class.jpg
 ---
 
 Technology changes at an extremely fast pace. One might even say that it changes every day. So shouldn't universities keep up?

@@ -2,6 +2,7 @@
 layout: post
 comments: true
 title: "Jumping into Jekyll"
+image: blog.jpg
 ---
 
 Today I decided to learn how to use **Jekyll**, the blog-aware, static site generator.

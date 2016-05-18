@@ -1,3 +1,7 @@
 .main{
-	padding: 30px 0 60px;
+
+	.content{
+		background: $bg-color;
+		padding: 30px 0 60px;
+	}
 }

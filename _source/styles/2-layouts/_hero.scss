@@ -1,0 +1,23 @@
+.hero{
+	line-height: 95vh;
+	background: rgba(0, 0, 0, 0.6);
+  text-align: center;
+
+	&--image{
+		object-fit: cover;
+		z-index: -1;
+	  @include position(fixed, 0 0 0 0);
+		@include size(100%);
+	}
+
+	&--text{
+		color: #fff;
+		max-width: 960px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: normal;
+    width: 100%;
+    padding: 20px;
+		margin: 0;
+	}
+}
