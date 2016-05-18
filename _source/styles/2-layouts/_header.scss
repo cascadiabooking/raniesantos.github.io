@@ -2,31 +2,35 @@
 	background: $banner-bg-color;
 	color: #fff;
 	font-family: "Montserrat";
+	height: $header-height;
+	line-height: $header-height;
 	@include clearfix;
 
 	a{
 		display: block;
+		padding: 0 15px;
 	}
 
 	&--brand{
-		padding: 10px;
 		float: left;
+		height: 100%;
 		background: $theme-color-1;
 
-		&--title{
-			text-transform: uppercase;
+		&--logo{
 			vertical-align: middle;
+			display: inline-block;
+			height: 35px;
+			margin-right: 3px;
+		}
+
+		&--title{
+			vertical-align: middle;
+			text-transform: uppercase;
 			font: {
 				weight: bold;
 				size: 1.1em;
 			}
 		}
 
-		&--logo{
-			margin-right: 3px;
-			height: 35px;
-			vertical-align: middle;
-			display: inline-block;
-		}
-	}
+	} // .header--brand
 } // .header
