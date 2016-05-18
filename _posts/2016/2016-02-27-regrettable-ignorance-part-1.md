@@ -2,6 +2,7 @@
 layout: post
 comments: true
 title: "Regrettable Ignorance, Part 1"
+image: thesis.jpg
 ---
 
 In this post, I'm going to briefly describe the difficult situation we had during our college thesis.
