@@ -21,6 +21,7 @@
 	&--links{
 		overflow: hidden;
 		background: $banner-bg-color;
+		z-index: 5;
 		@include clearfix;
 
 		&--link{
