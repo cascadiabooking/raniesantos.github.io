@@ -2,6 +2,7 @@
 layout: post
 comments: true
 title: "Regrettable Ignorance, Part 2"
+image: puzzle.jpg
 ---
 
 In [part 1]({% post_url 2016-02-27-regrettable-ignorance-part-1 %}), I shared a little bit about the issues surrounding our thesis project in college.
