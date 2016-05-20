@@ -2,6 +2,7 @@
 layout: post
 comments: true
 title: "Misused Mixins, Placeholders out of Place"
+image: confused.jpg
 ---
 
 Today I realized that I've been making a huge mistake in the way I've been using certain features of Sass.
