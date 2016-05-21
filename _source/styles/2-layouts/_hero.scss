@@ -4,10 +4,14 @@
   text-align: center;
 
 	&--image{
-		object-fit: cover;
 		z-index: -1;
 	  @include position(fixed, 0 0 0 0);
 		@include size(100%);
+		background: {
+			repeat: no-repeat;
+			position: center center;
+			size: cover;
+		}
 	}
 
 	&--text{
