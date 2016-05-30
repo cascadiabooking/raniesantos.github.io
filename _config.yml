@@ -4,7 +4,6 @@ description: I'm Ranie Santos, a graduate of Bachelor of Science in Information 
 disqus_shortname: raniesantos
 owner:
   name: Ranie Santos
-  email: ransan32@yahoo.com
   twitter: https://twitter.com/raniesantos32
   google-plus: https://plus.google.com/u/0/113604471991063878909
   github: https://github.com/raniesantos
@@ -25,6 +24,7 @@ lsi: false
 permalink: /:title.html
 
 exclude:
+- _source
 - node_modules
 - bower_components
 - package.json
