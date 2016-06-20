@@ -40,7 +40,7 @@ function strContains(haystack, needle){
 
 function getFormSubmitURL(){
 	var base64_email = "cmFuc2FuMzJAeWFob28uY29t";
-	return "//formspree.io/" + atob(base64_email);
+	return "https://formspree.io/" + atob(base64_email);
 }
 
 function showAlert($container, $alert){

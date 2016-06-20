@@ -142,7 +142,7 @@ function getFormSubmitURL(){
 	remember, you don't want to leave your email anywhere in your code
 	so don't forget to erase it later */
 	var base64_email = "eW91ckBlbWFpbC5jb20";
-	return "//formspree.io/" + atob(base64_email);
+	return "https://formspree.io/" + atob(base64_email);
 }
 ```
 
